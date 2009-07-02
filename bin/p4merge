@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+# A slightly more sophisticated wrapper than the one perforce.com suggests,
+# for the P4 merge shim executable on OSX. The article at
+#     http://kb.perforce.com/AllPerforceApplications/StandAloneClients/\
+#     P4merge/CommandLineP..rgeOnMacOsX
+# suggests a wrapper script, but not one that takes care of the fact that
+# P4 merge requires absolute paths to its inputs.
+#
+# Author: George van den Driessche
+
+import sys
+import os.path
+
+SHIM = '/Applications/p4merge.app/Contents/Resources/launchp4merge'
+
+shim_args = [SHIM]
+for arg in sys.argv[1:]:
+  if os.path.exists(arg):
+    shim_args.append(os.path.abspath(arg))
+  else:
+    shim_args.append(arg)
+
+os.execv(SHIM, shim_args)
+
