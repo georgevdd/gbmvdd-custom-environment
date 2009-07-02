@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+# Wraps p4merge to accommodate differences between SVN's idea of diff command
+# line arguments and P4 merge's expectations. SVN automatically supplies
+# several flags that P4 merge doesn't understand. This script assumes that
+# SVN will supply the names of the two files to diff as the last two
+# command-line arguments.
+#
+# Author: George van den Driessche
+
+import os
+import sys
+
+P4MERGE = 'p4merge'
+
+os.execvp(P4MERGE, [P4MERGE] + sys.argv[-2:])
