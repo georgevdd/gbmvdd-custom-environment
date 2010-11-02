@@ -1,0 +1,12 @@
+keycode 66 = Alt_L
+keycode 84 = Alt_R
+keycode 63 = Super_L
+keycode 71 = Super_R
+clear mod1
+clear mod2
+add mod1 = Alt_L
+add mod1 = Alt_R
+add mod4 = Super_L
+add mod4 = Super_R 
+keycode 75 = asterisk
+keycode 77 = plus
