@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Wraps p4merge to accommodate differences between Git's idea of diff command
+# line arguments and P4 merge's expectations. Git supplies several arguments
+# that P4 merge doesn't need.
+#
+# See: http://stackoverflow.com/questions/255202/\
+#      how-do-i-view-git-diff-output-with-a-visual-diff-program
+#
+# Author: George van den Driessche
+
+p4merge "$2" "$5"
