@@ -1,0 +1,4 @@
+[user]
+	email = gbmvdd@gmail.com
+[diff]
+	external = git-p4merge-diff
