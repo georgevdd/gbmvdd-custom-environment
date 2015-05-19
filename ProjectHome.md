@@ -1,0 +1,1 @@
+Scripts, configuration and so on that are useful for customizing a shell/development/desktop environment.
